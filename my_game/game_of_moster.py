@@ -12,9 +12,9 @@ arkaplan = pygame.image.load("hoppa.jpg")#resmi okumunasi saglar
 kordinat = arkaplan.get_rect()#kordinarlaini alir
 
 # Canavar ekleme
-canavar = pygame.image.load("canavar.png")
-k_canavar = canavar.get_rect()
-k_canavar.topleft = (230, 50)
+canavar = pygame.image.load("canavar.png")#cancavari oku
+k_canavar = canavar.get_rect()#kordinatlarini al
+k_canavar.topleft = (230, 50)#cercevenin hangi kisminda bulunacagini belirt
 
 # Para ekleme
 para = pygame.image.load("money.png")
@@ -22,11 +22,11 @@ para_kordinat = para.get_rect()
 para_kordinat.topleft = (455, 100)
 
 # FPS ayarlama
-saat = pygame.time.Clock()
+saat = pygame.time.Clock()#fps isete
 fps = 27#canavarin seri bir sekilde hareket etmeisni saglar
 
 # Font tanımlama
-font = pygame.font.SysFont("consolas", 30)  # 64 çok büyüktü, 30 daha uygun
+font = pygame.font.SysFont("consolas", 30)  # skor yazisini yazmak için
 #skor için yazi ekleme
 # Skor değişkenini ata
 skor = 0
@@ -35,7 +35,7 @@ skor = 0
 durum = True
 hiz=10
 while durum:
-    for i in pygame.event.get():
+    for i in pygame.event.get():#pencere içindeki harekeketlerine bakar
         if i.type == pygame.QUIT:
             durum = False
 
@@ -52,7 +52,7 @@ while durum:
     pygame.draw.line(pencere, (23, 34, 56), (0, 90), (genislik, 90), 3)
     #canavarin skor tabelasinin oldugu yere gitmemesi için yapilmis
     tus=pygame.key.get_pressed()#tus harekti içim
-    if tus[pygame.K_LEFT] and k_canavar.left>0:
+    if tus[pygame.K_LEFT] and k_canavar.left>0:#canavarin pencereden disari cikammasi için yazilan lkodlar
         k_canavar.x-=hiz
     elif tus[pygame.K_RIGHT] and k_canavar.right<genislik:
         k_canavar.x+=hiz
